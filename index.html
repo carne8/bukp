@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    
+<head>
+    <title>BUKP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="updatePhotos()">
+    <header>
+        <h1>
+            Titre
+        </h1>
+    </header>
+
+    <section id="programming">
+
+    </section>
+
+    <script>
+        const totalPhotos = 38
+
+        function updatePhotos(photoNumber = 8) {
+            let div = document.getElementById("photos")
+            while (0 < div.childElementCount) {
+                div.firstChild.remove()
+            }
+            for (let i = 1; i <= photoNumber; i++) {
+                let img = document.createElement("img")
+                img.src = "ressources\\diving photos\\"+String(i)+".JPG"
+                img.width = 200
+                let a = document.createElement("a")
+                a.href = "ressources\\diving photos\\"+String(i)+".JPG"
+                a.appendChild(img)
+                div.appendChild(a)
+            }
+
+            if (photoNumber > 10) {
+                document.getElementById("more or less button").innerText = "see less ..."
+                document.getElementById("more or less button").setAttribute("onclick", "updatePhotos(8)")
+            } else {
+                document.getElementById("more or less button").innerText = "see more ..."
+                document.getElementById("more or less button").setAttribute("onclick", "updatePhotos(32)")
+            }
+        }
+    </script>
+
+    <section id="diving">
+
+            <h2>Plongée et photographie sous marine</h2>
+
+        <div id="photos">
+        </div>
+        <p id="more or less button" style="text-align: right; margin: 20px; user-select: none;">see more ...</p>
+    </section>
+
+</body>
+
+</html>

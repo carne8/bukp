@@ -1,0 +1,30 @@
+body {
+    margin: 5%;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+section {
+    border-radius: 20px;
+    padding: 5%;
+    margin: 5%;
+}
+
+#diving {
+    background-color: aquamarine;
+}
+
+#diving div {
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#diving div img{
+    display: flex;
+    margin: 10px;
+}
