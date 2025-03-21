@@ -3,58 +3,156 @@
 <html>
     
 <head>
-    <title>BUKP</title>
+    <title>Paul Bukowski</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="updatePhotos()">
-    <header>
-        <h1>
-            Titre
-        </h1>
-    </header>
+<script>
+    function load() {
+        updatePhotos()
+    }
+    
+    const totalPhotos = 38
 
-    <section id="programming">
+    function updatePhotos(photoNumber = 12) {
+        let div = document.getElementById("photos")
+        while (0 < div.childElementCount) {
+            div.firstChild.remove()
+        }
+        for (let i = 1; i <= photoNumber; i++) {
+            let img = document.createElement("img")
+            img.src = "ressources\\diving photos\\low\\"+String(i)+".JPG"
+            img.width = 200
+            let a = document.createElement("a")
+            a.href = "ressources\\diving photos\\full\\"+String(i)+".JPG"
+            a.appendChild(img)
+            div.appendChild(a)
+        }
 
+        for (let i=0; i<10; i++) {
+            let fake = document.createElement("div")
+            fake.className = "placeholder"
+            div.appendChild(fake)
+        }
+
+        if (photoNumber > 12) {
+            document.getElementById("see more button").innerText = "see less ..."
+            document.getElementById("see more button").setAttribute("onclick", "updatePhotos(8)")
+        } else {
+            document.getElementById("see more button").innerText = "see more ..."
+            document.getElementById("see more button").setAttribute("onclick", "updatePhotos(38)")
+        }
+    }
+</script>
+
+<body onload="load()">
+
+    <section id="presentation">
+        
+        <header>
+            
+            <div id="topbar">
+                <div class="topbar-menu">
+                    <a href="#">Menu1</a>
+                </div>
+                <div class="topbar-separator">
+                    <div class="separator"></div>
+                </div>
+                <div class="topbar-menu">
+                    <a href="#projects">Projets</a>
+                </div>
+                <div class="topbar-separator">
+                    <div class="separator"></div>
+                </div>
+                <div class="topbar-menu">
+                    <a href="#diving-photos">Photos</a>
+                </div>
+                <div class="topbar-separator">
+                    <div class="separator"></div>
+                </div>
+                <div class="topbar-menu">
+                    <a href="#">Menu4</a>
+                </div>
+            </div>
+            <hr>
+            
+        </header>
+        
+        <div class="text-container">
+            <h1>
+                Paul Bukowski
+            </h1>
+            <div class="sided">
+            <div>
+                <div>
+                    <p style="text-align: left;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin tortor purus platea sit eu id nisi litora libero. Neque vulputate consequat ac amet augue blandit maximus aliquet congue. Pharetra vestibulum posuere ornare faucibus fusce dictumst orci aenean eu facilisis ut volutpat commodo senectus purus himenaeos fames primis convallis nisi.
+                    </p>    
+                </div>
+            </div>
+            <div>
+                <img id="profile-photo" src="ressources\\diving photos\\low\\1.JPG" alt="">
+            </div>
+            </div>
+        </div>
+        
+    </section>
+    
+    <section class="inter-section">
+        <div class="text-container">
+            <h2>
+            Programmation informatique
+            </h2>
+            <p>
+                Curabitur semper venenatis lectus viverra ex dictumst nulla maximus. Primis iaculis elementum conubia feugiat venenatis dolor augue ac blandit nullam ac phasellus turpis feugiat mollis. Duis lectus porta mattis imperdiet vivamus augue litora lectus arcu. Justo torquent pharetra volutpat ad blandit bibendum accumsan nec elit cras luctus primis ipsum gravida class congue.
+            </p>
+            <p>
+                Phasellus fermentum malesuada phasellus netus dictum aenean placerat egestas amet. Ornare taciti semper dolor tristique morbi. Sem leo tincidunt aliquet semper eu lectus scelerisque quis. Sagittis vivamus mollis nisi mollis enim fermentum laoreet.
+            </p>
+        </div>
     </section>
 
-    <script>
-        const totalPhotos = 38
+    <section id="programming-projects">
+        <h2>Mes Projets</h2>
+        <div id="projects">
+            <div>
+                <div>
+                    <img src="ressources\\diving photos\\low\\2.JPG" alt="">
+                </div>
+                <div>
+                    <p>The name of the project</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        function updatePhotos(photoNumber = 8) {
-            let div = document.getElementById("photos")
-            while (0 < div.childElementCount) {
-                div.firstChild.remove()
-            }
-            for (let i = 1; i <= photoNumber; i++) {
-                let img = document.createElement("img")
-                img.src = "ressources\\diving photos\\low\\"+String(i)+".JPG"
-                img.width = 200
-                let a = document.createElement("a")
-                a.href = "ressources\\diving photos\\full\\"+String(i)+".JPG"
-                a.appendChild(img)
-                div.appendChild(a)
-            }
+    <section class="inter-section">
+        <div class="text-container">
+            <h2>
+                Plongée sous-marine
+            </h2>
+            <p>
+                Vehicula etiam elementum finibus enim duis feugiat commodo adipiscing tortor tempor elit. Et mollis consectetur habitant turpis tortor consectetur adipiscing vulputate dolor lectus iaculis convallis adipiscing. Nam hendrerit dignissim condimentum ullamcorper diam morbi eget consectetur odio in sagittis.
+            </p>
+            <p>
+                Porttitor phasellus cursus tellus magna leo hendrerit curabitur nisl aliquet sociosqu. Rutrum mauris erat diam sollicitudin mattis ipsum platea consequat pulvinar nullam imperdiet. Inceptos ad etiam commodo consequat pellentesque laoreet curabitur.
+            </p>
+        </div>
+    </section>
 
-            if (photoNumber > 10) {
-                document.getElementById("more or less button").innerText = "see less ..."
-                document.getElementById("more or less button").setAttribute("onclick", "updatePhotos(8)")
-            } else {
-                document.getElementById("more or less button").innerText = "see more ..."
-                document.getElementById("more or less button").setAttribute("onclick", "updatePhotos(38)")
-            }
-        }
-    </script>
-
-    <section id="diving">
-
-        <h2>Plongée et photographie sous marine</h2>
+    <section id="diving-photos">
+        <h2>Photos de plongée</h2>
         <p></p>
 
         <div id="photos">
+            <!-- Will be filled with the photos by javascript -->
         </div>
-        <p id="more or less button" style="text-align: right; margin: 20px; user-select: none;">see more ...</p>
+        <p id="see more button" style="text-align: right; margin: 20px; user-select: none;">see more ...</p>
     </section>
+
+    <footer>
+        bukowski.paul@icloud.com
+    </footer>
 
 </body>
 
