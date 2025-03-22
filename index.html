@@ -36,11 +36,11 @@
         }
 
         if (photoNumber > 12) {
-            document.getElementById("see more button").innerText = "see less ..."
-            document.getElementById("see more button").setAttribute("onclick", "updatePhotos(8)")
+            document.getElementById("see-more-button").innerText = "see less ..."
+            document.getElementById("see-more-button").setAttribute("onclick", "updatePhotos(12)")
         } else {
-            document.getElementById("see more button").innerText = "see more ..."
-            document.getElementById("see more button").setAttribute("onclick", "updatePhotos(38)")
+            document.getElementById("see-more-button").innerText = "see more ..."
+            document.getElementById("see-more-button").setAttribute("onclick", "updatePhotos(38)")
         }
     }
 </script>
@@ -53,7 +53,7 @@
             
             <div id="topbar">
                 <div class="topbar-menu">
-                    <a href="#">Menu1</a>
+                    <a href="#">.....</a>
                 </div>
                 <div class="topbar-separator">
                     <div class="separator"></div>
@@ -71,25 +71,24 @@
                     <div class="separator"></div>
                 </div>
                 <div class="topbar-menu">
-                    <a href="#">Menu4</a>
+                    <a href="#">.....</a>
                 </div>
             </div>
-            <hr>
             
         </header>
         
         <div class="text-container">
-            <h1>
-                Paul Bukowski
-            </h1>
             <div class="sided">
-            <div>
-                <div id="pres-text">
+                <div>
+                    <div id="pres-text">
+                    <h1>
+                        Paul Bukowski
+                    </h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin tortor purus platea sit eu id nisi litora libero. Neque vulputate consequat ac amet augue blandit maximus aliquet congue. 
+                        Actuellement lycéen en Terminale Générale Section Européenne au Lycée de la Herdrie avec les spécialités Maths et Physique-Chimie et l'option Maths Expertes.
                     </p>
                     <p>
-                        Curabitur semper venenatis lectus viverra ex dictumst nulla maximus. Primis iaculis elementum conubia feugiat venenatis dolor augue ac blandit nullam ac phasellus turpis feugiat mollis. Duis lectus porta mattis imperdiet vivamus augue litora lectus arcu. 
+                        Je projette d'entrer en école d'ingénieur pour travailler plus tard dans le développement de logiciel.
                     </p>
                 </div>
             </div>
@@ -107,16 +106,24 @@
                 Programmation informatique
             </h2>
             <p>
-                Curabitur semper venenatis lectus viverra ex dictumst nulla maximus. Primis iaculis elementum conubia feugiat venenatis dolor augue ac blandit nullam ac phasellus turpis feugiat mollis. Duis lectus porta mattis imperdiet vivamus augue litora lectus arcu. Justo torquent pharetra volutpat ad blandit bibendum accumsan nec elit cras luctus primis ipsum gravida class congue.
+                Dès l'école primaire, j'ai découvert la programmation avec <a href="https://www.thymio.org/">Thymio</a>, un robot éducatif programmable avec une série de conditions logiques.
+                Depuis lors, je me suis passionné pour la programmation et j'ai continué d'apprendre.
             </p>
             <p>
-                Phasellus fermentum malesuada phasellus netus dictum aenean placerat egestas amet. Ornare taciti semper dolor tristique morbi. Sem leo tincidunt aliquet semper eu lectus scelerisque quis. Sagittis vivamus mollis nisi mollis enim fermentum laoreet.
+                En entrant au collège j'ai découvert <a href="https://scratch.mit.edu/">Scratch</a>, avec lequel j'ai créé plusieurs petits jeux pour moi et mes amis.
+                Enfin, en entrant au lycée, j'ai appris <a href="https://www.python.org/">Python</a>, avec lequel au bout de quelques mois je connaissais déjà bien plus que tout ce qu'on m'en apprendrait.
+            </p>
+            <p>
+                Avec les cours de NSI en 1ère, j'ai découvert de nombreuses notions que j'ai approfondies par moi même en dehors des cours. J'ai ainsi appris beaucoup en algorithmie, structures de données, protocoles de communications / web et API.
+            </p>
+            <p>
+                J'ai mené de mon côté plusieurs projets personnels qui m'ont permi d'apprendre <a href="https://developer.mozilla.org/fr/docs/Web/HTML">HTML</a>/<a href="https://developer.mozilla.org/fr/docs/Web/CSS">CSS</a> plus profondément et le language de programmation <a href="https://www.rust-lang.org/fr">Rust</a> pour les nombreuses possibilités qu'il offre face à <a href="https://www.python.org/">Python</a>.
             </p>
         </div>
     </section>
 
     <section id="programming-projects">
-        <h2>Mes Projets</h2>
+        <h2>Quelques Projets</h2>
         <div id="projects">
             <div class="project">
                 <div>
@@ -136,10 +143,10 @@
             </div>
             <div class="project">
                 <div>
-                    <img src="ressources\\profile.JPG" alt="">
+                    <img src="ressources\\projects\\this-website.JPG" alt="">
                 </div>
                 <div>
-                    <p><a href="">This Website</a></p>
+                    <p><a href="">Mon Site Web</a></p>
                 </div>
             </div>
             <div class="project">
@@ -154,6 +161,7 @@
             <div class="placeholder"></div>
             <div class="placeholder"></div>
             <div class="placeholder"></div>
+            <div class="placeholder"></div>
         </div>
     </section>
 
@@ -163,10 +171,20 @@
                 Plongée sous-marine
             </h2>
             <p>
-                Vehicula etiam elementum <a href="">finibus</a> enim duis feugiat commodo adipiscing tortor tempor elit. Et mollis consectetur habitant turpis tortor consectetur adipiscing vulputate dolor lectus iaculis convallis adipiscing. Nam hendrerit dignissim condimentum ullamcorper diam morbi eget consectetur odio in sagittis.
+                Depuis petit, j'ai toujours passé une grande partie de mon temps dans l'eau.
+                J'ai commencé la natation à 6 ans (et je continue), j'ai fais du snorkeling en mer (palme, masque et tuba) et à 8 ans j'ai fais mon baptème de plongée.
             </p>
             <p>
-                Porttitor phasellus cursus tellus magna leo hendrerit curabitur nisl aliquet sociosqu. Rutrum mauris erat diam sollicitudin mattis ipsum platea consequat pulvinar nullam imperdiet. Inceptos ad etiam commodo consequat pellentesque laoreet curabitur.
+                J'ai aujourd'hui passé les niveau 1 et 2 de la <a href="https://ffessm.fr/">Fédération Française de Plongée</a> ce qui me permet de plonger encadré jusqu'à 40 mètres de profondeur.
+            </p>
+            <p>
+                En 2021, j'ai rejoins le <a href="https://www.phoc.fr/">PHOC</a>, un club de plongée, avec lequel je vais nager une fois par semaine et avec lequel j'ai passé le niveau 2 et le <a href="https://ffessm.fr/rifa-plongee">RIFAP</a> et avec lequel je prépare actuellement le niveau 3 pour pouvoir aller à 60 mètres.
+            </p>
+            <p>
+                J'ai, depuis que j'ai commencé, comptabilisé plus d'une centaine de plongées dans plusieurs environnements différents : dans le Golf du Morbihan, en Mer Mediterrannée (Sud de la France et Nord de l'Espagne), en Mer Rouge (Egypte) et à Bali.
+            </p>
+            <p>
+                Lors de mon premier voyage en Egypte, en 2022, j'ai expérimenté pour la première fois la photographie sous-marine avec un ancien appareil de mon père, que j'emmène avec moi dans toutes mes plongées depuis.
             </p>
         </div>
     </section>
@@ -178,7 +196,9 @@
         <div id="photos">
             <!-- Will be filled with the photos by javascript -->
         </div>
-        <p id="see more button" style="text-align: right; margin: 20px; user-select: none;">see more ...</p>
+        <div id="button-container">
+            <button id="see-more-button">see more ...</button>
+        </div>
     </section>
 
     <footer>
@@ -187,4 +207,3 @@
 
 </body>
 
-</html>
