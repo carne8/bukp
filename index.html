@@ -12,9 +12,14 @@
         updatePhotos()
     }
     
+    const min_photos = 12
     const totalPhotos = 38
+    let current = 0
+    
+    function updatePhotos(photoNumber = min_photos) {
 
-    function updatePhotos(photoNumber = 12) {
+        current = photoNumber
+
         let div = document.getElementById("photos")
         while (0 < div.childElementCount) {
             div.firstChild.remove()
@@ -35,66 +40,78 @@
             div.appendChild(fake)
         }
 
-        if (photoNumber > 12) {
-            document.getElementById("see-more-button").innerText = "see less ..."
-            document.getElementById("see-more-button").setAttribute("onclick", "updatePhotos(12)")
+        if (current <= min_photos) {
+            document.getElementById("less").style.display = "none"
+            document.getElementById("more").style.display = "block"
+        } else if (current >= totalPhotos) {
+            document.getElementById("less").style.display = "block"
+            document.getElementById("more").style.display = "none"
         } else {
-            document.getElementById("see-more-button").innerText = "see more ..."
-            document.getElementById("see-more-button").setAttribute("onclick", "updatePhotos(38)")
+            document.getElementById("less").style.display = "block"
+            document.getElementById("more").style.display = "block"
+        }
+    }
+
+    function modifyPhotos(n) {
+        if (n < 0) {
+            updatePhotos(Math.max(min_photos, current + n))
+            
+        } else {
+            if (current + 2*n > totalPhotos) {
+                updatePhotos(totalPhotos)
+            } else {
+                updatePhotos(current + n)
+            }
         }
     }
 </script>
 
 <body onload="load()">
+    
+    <div id="topbar">
+        <a href="#presentation">
+            <div class="topbar-menu">
+                Home
+            </div>
+        </a>
+        <a href="#programming-projects">
+            <div class="topbar-menu">
+                Projets
+            </div>
+        </a>
+        <a href="#diving-photos">
+            <div class="topbar-menu">
+                Photos
+            </div>
+        </a>
+        <a href="#">
+            <div class="topbar-menu">
+                .....
+            </div>
+        </a>
+    </div>
 
     <section id="presentation">
-        
-        <header>
-            
-            <div id="topbar">
-                <div class="topbar-menu">
-                    <a href="#">.....</a>
-                </div>
-                <div class="topbar-separator">
-                    <div class="separator"></div>
-                </div>
-                <div class="topbar-menu">
-                    <a href="#programming-projects">Projets</a>
-                </div>
-                <div class="topbar-separator">
-                    <div class="separator"></div>
-                </div>
-                <div class="topbar-menu">
-                    <a href="#diving-photos">Photos</a>
-                </div>
-                <div class="topbar-separator">
-                    <div class="separator"></div>
-                </div>
-                <div class="topbar-menu">
-                    <a href="#">.....</a>
-                </div>
-            </div>
-            
-        </header>
-        
         <div class="text-container">
             <div class="sided">
                 <div>
-                    <div id="pres-text">
+                    <img id="profile-photo" src="ressources\\profile.JPG" alt="">
+                </div>
+                <div id="pres-text">
                     <h1>
                         Paul Bukowski
                     </h1>
                     <p>
-                        Actuellement lycéen en Terminale Générale Section Européenne au Lycée de la Herdrie avec les spécialités Maths et Physique-Chimie et l'option Maths Expertes.
-                    </p>
-                    <p>
+                        Lycéen en Terminale Générale Section Européenne au Lycée de la Herdrie avec les spécialités Maths, Physique-Chimie et l'option Maths Expertes.
                         Je projette d'entrer en école d'ingénieur pour travailler plus tard dans le développement de logiciel.
                     </p>
+                    <p>
+                        Je suis passionné de Mathématiques et d'Informatiques. 
+                    </p>
+                    <p>
+                        J'adore apprendre sur de nouveaux sujets, scientifiques ou non et j'aime apprendre aux autres ce que j'ai compris.
+                    </p>
                 </div>
-            </div>
-            <div>
-                <img id="profile-photo" src="ressources\\profile.JPG" alt="">
-            </div>
             </div>
         </div>
         
@@ -146,7 +163,7 @@
                     <img src="ressources\\projects\\this-website.JPG" alt="">
                 </div>
                 <div>
-                    <p><a href="">Mon Site Web</a></p>
+                    <p><a href="https://github.com/bukp/bukp">Mon Site Web</a></p>
                 </div>
             </div>
             <div class="project">
@@ -178,8 +195,7 @@
                 J'ai aujourd'hui passé les niveau 1 et 2 de la <a href="https://ffessm.fr/">Fédération Française de Plongée</a> ce qui me permet de plonger encadré jusqu'à 40 mètres de profondeur.
             </p>
             <p>
-                En 2021, j'ai rejoins le <a href="https://www.phoc.fr/">PHOC</a>, un club de plongée, avec lequel je vais nager une fois par semaine et avec lequel j'ai passé le niveau 2 et le <a href="https://ffessm.fr/rifa-plongee">RIFAP</a> et avec lequel je prépare actuellement le niveau 3 pour pouvoir aller à 60 mètres.
-            </p>
+                En 2021, j'ai rejoint le <a href="https://www.phoc.fr/">PHOC</a>, un club de plongée où je nage chaque semaine. Avec eux, j'ai obtenu mon niveau 2 ainsi que le <a href="https://ffessm.fr/rifa-plongee">RIFAP</a>, et je prépare actuellement le niveau 3 afin de plonger jusqu’à 60 mètres.            </p>
             <p>
                 J'ai, depuis que j'ai commencé, comptabilisé plus d'une centaine de plongées dans plusieurs environnements différents : dans le Golf du Morbihan, en Mer Mediterrannée (Sud de la France et Nord de l'Espagne), en Mer Rouge (Egypte) et à Bali.
             </p>
@@ -191,13 +207,13 @@
 
     <section id="diving-photos">
         <h2>Mes photos de plongée</h2>
-        <p></p>
 
         <div id="photos">
             <!-- Will be filled with the photos by javascript -->
         </div>
         <div id="button-container">
-            <button id="see-more-button">see more ...</button>
+            <button id="less" class="see-more-button" onclick="updatePhotos()">see less</button>
+            <button id="more" class="see-more-button" onclick="modifyPhotos(12)">see more</button>
         </div>
     </section>
 

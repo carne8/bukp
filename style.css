@@ -1,3 +1,12 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    /*border: 1px solid;*/
+}
+
 body {
     margin: 0;
     font-family:Arial, Helvetica, sans-serif;
@@ -19,7 +28,7 @@ h1 {
 h2 {
     font-size: 36px;
     margin-top: 60px;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 
 p, a {
@@ -70,85 +79,112 @@ footer {
 }
 
 #topbar {
+    position: fixed;
     display: flex;
-    flex-direction: row;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     justify-content: center;
-    padding-bottom: 3px;
-    margin-bottom: 100px;
+    flex-direction: row;
+    z-index: 1;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    width: fit-content;
 }
-
 
 .topbar-menu {
     text-align: center;
-    flex: 10;
     align-self: stretch;
     font-weight: 600;
     max-width: 280px;
-    padding-bottom: 8px;
-    border-bottom: 3px solid #161616;
+    padding: 10px 45px;
 }
 
-.topbar-separator {
-    max-width: 3px;
-    display: block;
-    padding-bottom: 6px;
-    border-bottom: 3px solid #161616;
+#topbar > a:nth-child(odd) > .topbar-menu {
+    background-color: #61616151;
 }
 
-.separator {
-    width: 3px;
-    background-color: #161616;
-    height: 100%;
-    margin: auto;
+#topbar > a:nth-child(even) > .topbar-menu {
+    background-color: #93939351;
+}
+
+#topbar > a:first-child > .topbar-menu {
+    border-bottom-left-radius: 20px;
+}
+
+#topbar > a:last-child > .topbar-menu {    
+    border-bottom-right-radius: 20px;
 }
 
 #topbar a:any-link {
-    font-weight:bolder;
     color: black;
 }
 
 #topbar a:hover {
     color: black;
+    text-decoration: none;
 }
 
 #presentation {
-    background-color: #d0f0bd;
-    padding-top: 60px;
+    background-color: #f5f0a7;
+    padding-bottom: 60px;
+    padding-top: 100px;
+}
+
+#presentation .text-container {
+    padding-left: 0%;
+    padding-right: 0%;
 }
 
 .sided {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sided > * {
+    margin-top: 50px;
 }
 
 .sided > div:nth-child(1) {
+    margin-left: 5%;
+    margin-right: 5%;
     flex-shrink: 0;
     flex-grow: 0;
     flex: 1;
+    min-width: 400px;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sided > div:nth-child(2) {
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex: 1;
+    min-width: 400px;
+    margin-left: 5%;
     margin-right: 5%;
     display: flex;
 }
 
-.sided > div:nth-child(1) > div {
+.sided > div:nth-child(2) {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.sided > div:nth-child(2) {
-    margin-left: 5%;
-    flex-shrink: 0;
-    flex-grow: 0;
-    flex: 1;
-    display: flex;
-    align-items: start;
-    justify-content: center;
+.sided > div:nth-child(2) > p{
+    max-width: 650px;
 }
 
 #profile-photo {
     width: 85%;
     object-fit: cover;
     border-radius: 25px;
-    margin-top: 30px;
 }
 
 #pres-text {
@@ -187,7 +223,12 @@ footer {
     margin: 20px;
     background-color: rgb(236, 236, 236);
     flex-basis: 1;
-    box-shadow: rgba(0, 0, 0, 0.5) 0 0 20px;
+    box-shadow: rgba(0, 0, 0, 0.6) 0 0 10px;
+    transition-duration: 0.4s;
+}
+
+.project:hover {    
+    box-shadow: rgba(0, 0, 0, 0.6) 0 0 20px;
 }
 
 .project > div:nth-child(1) {
@@ -224,15 +265,16 @@ footer {
 
 #diving-photos {
     background-color: #5ea4d3;
+    padding-bottom: 50px;
 }
 
 #photos {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0 calc(20% - 100px);
+    padding: 0 calc(20% - 150px);
     margin: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 #photos a{
@@ -264,25 +306,22 @@ footer {
     margin: 0px;
 }
 
-#see-more-button {
-    margin: 20px;
-    margin-right: 0;
+button {
     padding: 5px 20px;
     border-radius: 20px;
-    margin-right: 100px;
+    margin-right: 20px;
     text-align: center;
     border: none;
     background: linear-gradient(0.47turn, #77b6e1, #5ea4d3, #5e8fd3, #6784cf);
     color: #eeeeee;
-    box-shadow: rgba(0, 0, 0, 0.656) 3px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.656) 2px 2px 4px;
     transition-duration: 0.4s;
 }
 
-#see-more-button:hover {
-    box-shadow: rgba(0, 0, 0, 0.656) 6px 6px 16px;
+button:hover {
+    box-shadow: rgba(0, 0, 0, 0.656) 4px 4px 8px;
 }
 
-#see-more-button:active {
-    box-shadow: rgba(0, 0, 0, 0.656) 1px 1px 4px;
-    color: #ffe68c;
+button:active {
+    box-shadow: rgba(0, 0, 0, 0.656) 1px 1px 2px;
 }
