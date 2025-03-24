@@ -1,3 +1,13 @@
+:root {
+    --first-section-color: #f5f0a7;
+    --second-section-color: #98deea;
+    --third-section-color: #5ea4d3;
+    --main-text-color: #161616;
+    
+    --inter-section-color: #4e4e4e ;
+    --secondary-text-color: #b9b9b9;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -10,7 +20,8 @@ html {
 body {
     margin: 0;
     font-family:Arial, Helvetica, sans-serif;
-    background-color: #4e4e4e;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--inter-section-color);
     user-select: none;
 }
 
@@ -54,7 +65,7 @@ section, footer {
     border-radius: 0;
     padding: calc(2% + 20px) 2% calc(2% + 20px) 2%;
     clip-path: polygon(0% 0%, 100% 40px, 100% 100%, 0% calc(100% - 40px));
-    color: #161616;
+    color: var(--main-text-color);
 }
 
 footer {
@@ -63,12 +74,12 @@ footer {
 
 .inter-section, footer {
     clip-path: none;
-    color: rgb(185, 185, 185);
+    color: var(--secondary-text-color);
 }
 
 .inter-section a:any-link, footer a:any-link {
-    color: rgb(209, 209, 209);
-    text-shadow: rgb(174, 174, 174) 0px 0px 2px;
+    color: var(--secondary-text-color);
+    text-shadow: white 0px 0px 2px;
 }
 
 .text-container {
@@ -98,8 +109,9 @@ footer {
     text-align: center;
     align-self: stretch;
     font-weight: 600;
-    max-width: 280px;
-    padding: 10px 45px;
+    min-width: 180px;
+    padding: 10px 20px;
+    transition-duration: 0.4s;
 }
 
 #topbar > a:nth-child(odd) > .topbar-menu {
@@ -118,6 +130,10 @@ footer {
     border-bottom-right-radius: 20px;
 }
 
+#topbar > a:hover > .topbar-menu  {
+    background-color: #cacaca44;
+}
+
 #topbar a:any-link {
     color: black;
 }
@@ -128,7 +144,7 @@ footer {
 }
 
 #presentation {
-    background-color: #f5f0a7;
+    background-color: var(--first-section-color);
     padding-bottom: 60px;
     padding-top: 100px;
 }
@@ -184,7 +200,7 @@ footer {
 #profile-photo {
     width: 85%;
     object-fit: cover;
-    border-radius: 25px;
+    border-radius: 5px;
 }
 
 #pres-text {
@@ -199,7 +215,7 @@ footer {
 }
 
 #programming-projects {
-    background-color: #98deea;
+    background-color: var(--second-section-color);
 }
 
 #projects {
@@ -264,7 +280,7 @@ footer {
 }
 
 #diving-photos {
-    background-color: #5ea4d3;
+    background-color: var(--third-section-color);
     padding-bottom: 50px;
 }
 
