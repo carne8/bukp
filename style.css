@@ -49,13 +49,13 @@ p {
     }
     
     h2 {
-        font-size: 28px;
+        font-size: 22px;
         margin-top: 60px;
         margin-bottom: 80px;
     }
 
     p, a {
-        font-size: 16px;
+        font-size: 14px;
     }
 }  
 
@@ -71,36 +71,41 @@ a:hover {
 section, footer {
     margin-top: -40px;
     border-radius: 0;
-    padding: calc(2% + 40px) 2% calc(2% + 20px) 2%;
+    padding: calc(2% + 60px) 2% calc(2% + 80px) 2%;
     clip-path: polygon(0% 0%, 100% 40px, 100% 100%, 0% calc(100% - 40px));
 }
 
 section:nth-child(1) {
-    background-color: var(--primary-container);    
-    color: var(--on-primary-container);
-}
-
-section:nth-child(2) {
     background-color: var(--primary);    
     color: var(--on-primary);
 }
 
+section:nth-child(2) {
+    background-color: var(--primary-container);    
+    color: var(--on-primary-container);
+}
+
 section:nth-child(3) {
+    background-color: var(--primary);    
+    color: var(--on-primary);
+}
+
+section:nth-child(4) {
     background-color: var(--secondary-container);    
     color: var(--on-secondary-container);
 }
 
-section:nth-child(4) {
+section:nth-child(5) {
     background-color: var(--secondary);    
     color: var(--on-secondary);
 }
 
-section:nth-child(5) {
+section:nth-child(6) {
     background-color: var(--tertiary-container);    
     color: var(--on-tertiary-container);
 }
 
-section:nth-child(6) {
+section:nth-child(7) {
     background-color: var(--tertiary);    
     color: var(--on-tertiary);
 }
@@ -108,6 +113,8 @@ section:nth-child(6) {
 footer {
     background-color: var(--surface-variant);
     color: var(--on-surface-variant);
+    padding-top: 40px;
+    padding-bottom: 30px;
 }
 
 footer {
@@ -149,15 +156,21 @@ footer {
     scrollbar-width: none; /* Hides scrollbar in Firefox */
 }
 
+#topbar a {
+    flex: 1;
+    max-width: 150px;
+}
+
 .topbar-menu {
     text-align: center;
     align-self: stretch;
     font-weight: 600;
-    border-radius: 30px;
-    padding: 10px 30px;
+    border-radius: 25px;
+    padding: 10px 10px;
     margin: 10px 10px;
-    min-width: 130px;
-    transition-duration: 0.1s;
+    margin-right: 0;
+    flex: 1;
+    transition-duration: 0.2s;
     color: var(--on-surface);
     border: 1px solid transparent;
 }
@@ -165,6 +178,7 @@ footer {
 #topbar > a:hover > .topbar-menu  {
     background-color: var(--inverse-surface);
     color: var(--inverse-on-surface);
+    transition-duration: 0.4s;
 }
 
 #topbar > a:active > .topbar-menu {    
@@ -176,7 +190,6 @@ footer {
 }
 
 #presentation {
-    background-color: var(--primary);
     padding-bottom: 60px;
     padding-top: 100px;
 }
@@ -313,8 +326,8 @@ footer {
 }
 
 #photos a{
-    height: 160px;
-    flex-basis: 220px;
+    flex-basis: min( calc(48% - 20px), 220px);
+    aspect-ratio: 11/8;
     margin: 10px;
     justify-content: center;
 }
