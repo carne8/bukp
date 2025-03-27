@@ -1,13 +1,10 @@
 html {
     scroll-behavior: smooth;
-    overscroll-behavior-x: contain;
-    overscroll-behavior-y: contain;
+    overflow-x: hidden;
 }
 
 * {
     box-sizing: border-box;
-    overscroll-behavior-x: contain;
-    overscroll-behavior-y: contain;
 }
 
 :focus {
@@ -20,6 +17,7 @@ body {
     background-color: var(--background);
     color: var(--on-background);
     user-select: none;
+    overflow-x: hidden;
 }
 
 h1, h2 {
@@ -224,8 +222,6 @@ footer {
 }
 
 .sided > div:nth-child(1) {
-    margin-left: 5%;
-    margin-right: 5%;
     flex-shrink: 0;
     flex-grow: 0;
     flex: 1;
@@ -316,6 +312,7 @@ footer {
 
 .project > div:nth-child(2) p {
     text-align: center;
+    margin: 16px 0;
     font-weight: 600;
 }
 
@@ -326,7 +323,7 @@ footer {
     margin-bottom: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 550px) {
 
     #projects {
         padding-left: 3%;
@@ -337,14 +334,26 @@ footer {
         margin: 10px;
         width: min(250px, calc(50% - 22px));
     }
-    
+}
+
+@media (max-width: 400px) {
     .project > div:nth-child(1) {
         padding: 8px;
     }
 
     .project > div:nth-child(2) p {
-        font-size: 10px;
         font-weight: 400;
+        margin: 8px 0;
+    }
+
+    .project > div:nth-child(2) a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 300px) {
+    .project > div:nth-child(2) a {
+        font-size: 10px;
     }
 }
 
